@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- REACT LIBRARY -->
+  <script src="https://unpkg.com/react@15.5.4/dist/react.js"></script>
+  <!-- REACT DOM LIBRARY -->
+  <script src="https://unpkg.com/react-dom@15.5.4/dist/react-dom.js"></script>
+  <!-- BABEL LIBRARY -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Friendly</title>
+</head>
+<body>
+  <div id="app">React has not rendered yet</div>
+
+  <script type="text/babel">
+  
+    // Friendly Complex Component
+    function FriendLy(props) {
+      var friendlyStyle = {
+        display: "inline-block",
+        margin: 20,
+        height: 300,
+        width: 200,
+        padding: 0,
+        background: "#fff",
+        WebkitFilter: "drop-shadow(0px 0px 5px #555)",
+        filter: "drop-shadow(0px 0px 5px #555)"
+      }
+      return(
+        <div style={friendlyStyle}>
+          <Avatar img={props.img}/>
+          <UserName name={props.name}/>
+          <GetConnected/>
+        </div>
+      );
+    }
+
+    // Avatar Component
+
+    function Avatar(props) {
+      var avatarStyle = {
+        marginLeft: 27,
+        marginTop: 20,
+        height: 150,
+        width: 150,
+        borderRadius: "50%"
+      }
+      return(
+        <img src={props.img} alt="profile picture" style={avatarStyle}/>
+      );
+    }
+
+    // UserName Component
+
+    function UserName(props) {
+      var nameStyle = {
+        textAlign: "center",
+        fontSize: 22,
+        fontFamily: "Arial, Helvetica, sans-serif",
+        margin: 20
+      }
+      return(
+        <h1 style={nameStyle}>{props.name}</h1>
+      );
+    }
+
+    // GetConnected Component
+
+    function GetConnected() {
+      var getConnectedStyle = {
+        marginLeft: 15
+      }
+      return(
+        <div style={getConnectedStyle}>
+          <Like/>
+          <Share/>
+          <Add/>
+        </div>
+      );
+    }
+
+      var iconStyle = {
+        margin: 20
+      }
+
+      // Like Component
+
+      function Like() {
+        return(
+          <i className="fa fa-thumbs-up" aria-hidden="true" style = {iconStyle}></i>
+        );
+      }
+
+      // Share Component
+
+      function Share() {
+        return(
+          <i className="fa fa-share" aria-hidden="true" style = {iconStyle}></i>
+        );
+      }
+
+      // Add Component
+
+      function Add() {
+        return(
+          <i className="fa fa-users" aria-hidden="true" style = {iconStyle}></i>
+        );
+      }
+
+    ReactDOM.render(
+      <div>
+        <FriendLy 
+          name="Maxim" img="https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-1/p160x160/24909548_10210999965095879_7794094289875302333_n.jpg?oh=a7d723c0cde964ef80b65c28f695fc36&oe=5AEF105E"
+        />
+        <FriendLy 
+          name="Lynn Byrd" img="https://randomuser.me/api/portraits/women/28.jpg"
+        />
+        <FriendLy 
+          name="Sarah Baker" img="https://randomuser.me/api/portraits/women/58.jpg"
+        />
+        <FriendLy 
+          name="Beth Owens" img="https://randomuser.me/api/portraits/women/92.jpg"
+        />
+        <FriendLy 
+          name="Martha Lucas" img="https://randomuser.me/api/portraits/women/87.jpg"
+        />
+        <FriendLy 
+          name="Owen Davidson" img="https://randomuser.me/api/portraits/men/82.jpg"
+        />
+        <FriendLy 
+          name="Brooklyn Scott" img="https://randomuser.me/api/portraits/women/60.jpg"
+        />
+        <FriendLy 
+          name="Ellen Chapman" img="https://randomuser.me/api/portraits/women/18.jpg"
+        />
+        <FriendLy 
+          name="Roger Owens" img="https://randomuser.me/api/portraits/men/37.jpg"
+        />
+        <FriendLy 
+          name="Elsie Griffin" img="https://randomuser.me/api/portraits/women/82.jpg"
+        />
+      </div>,
+      document.getElementById("app")
+    );
+  
+  </script>
+</body>
+</html>
